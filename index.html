@@ -174,7 +174,7 @@
 						<section>
 							<h1 class="upholdHeader">Global Variable</h1>
 							<br>
-							<ul class="fragment">
+							<ul>
 								<li class="fragment">Local scope</li>									
 							</ul>
 						</section>
@@ -221,98 +221,81 @@ c();</code></pre> -->
 					</section>
 					<section>
 						<section>
-							<h2>Satuday morning</h2>
+							<h1 class="upholdHeader">Satuday morning</h1>
 							<img src="images/drunk.jpg" alt="" class="fragment">
 						</section>
-						<section></section>
+						<section>
+							<h2> car keys ????</h2>
+							<img src="images/lostKey.jpg" alt="">
+						</section>
+						<section>
+							<h2>step-1</h2>
+							<img src="images/messyRoom1.jpg" alt="">
+						</section>
+						<section>
+							<img src="images/underTheBed.jpg" alt="">
+						</section>						
+						<section>
+							<h2>step-2</h2>
+							<img src="images/keyHolder.jpg" alt="">
+						</section>
+						<section>
+							<h2>step -3</h2>
+							<img src="images/outsideHouse.jpg" alt="">
+						</section>
+						<section>
+							<h2>step-4</h2>
+							<img src="images/notFound.png" alt="">
+						</section>
 					</section>
 					<section>
 						<section>
-							<h1>local variable</h1>
+							<h1>so what?</h1>
+							<img src="images/confused.jpg" alt="">
 						</section>						
 						<section>
-							<h2>store out of scope variable</h2>
+							<h2>access variable</h2>
 							<pre><code>
-var myArr = [0, 1, 2,3 4, 5 ...];
+var c = 7;
 
-function useGlobal() {
-    
-    for (j = 0; j &lt; 1000; j++){
-        console.log(myArr[j]);
+function foo(b){
+   var a = 8;
+
+   console.log(a);
+   console.log(b);
+   console.log(c);
+   console.log(d);
+}
+							</code></pre>
+						</section>
+						<section>
+							<h2>access again and again</h2>
+							<pre><code>
+var a = 99;
+
+function useGlobal() {    
+    for (j = 0; j &lt; 1000000; j++){
+        console.log(99);
     }
 }
 							</code></pre>
 							<pre class="fragment"><code>
+var a = 99;
 function useLocal() {
-    var localArr = myArr;
-
-    for (var k = 0; k &lt; 1000; k++){
-        console.log(localArr[k]);
+    var localA = a;
+    for (var k = 0; k &lt; 1000000; k++){
+        console.log(localA);
     }
 }
 							</code></pre>
-							<a href="http://jsperf.com/global/17">local vs global variable</a>							
+							<a href="http://jsperf.com/global/17">local vs global variable</a>
 						</section>
 						<section>
-							<h2>cache outside for loop</h2>						
-							<pre><code>
-for(var i = 0; i &lt; someArray.length; i++) {
-
-   var container = document.getElementById('container');  
-   container.innerHtml += 'my number: ' + i;  
-   console.log(i);  
-}
-							</code></pre>		
-							<h4 class="fragment">when value doesnt change</h4>
-							<pre class="fragment"><code>
-var container = document.getElementById('container');  
-
-for(var i = 0; i &lt; someArray.length; i++) {
-
-   container.innerHtml += 'my number: ' + i;  
-   console.log(i);  
-} 
-//caution, this cause reflow
-							</code></pre>
-							<a href="http://jsperf.com/property-access-vs-variable-caching">property access vs variable cache</a>
-						</section>
-						<!-- <section>
-							<h2>access object property</h2>
-							<pre><code>
-var a = [{ z: 1 }, { z: 2 }],
-   sum = 0,
-   el;
-
-for(var i =0; i &lt; 1000; i++){
-   el = a[i%2];
-   sum += el.z;
-   sum += el.z;
-   sum += el.z;
-   sum += el.z;
-   sum += el.z;	
-}
-							</code></pre>							
-						</section>
-						<section>
-							<h2>cache properties</h2>
-							<pre><code>
-var a = [{ z: 1 }, { z: 2 }],
-   sum = 0,
-   val;
-
-for(var i =0; i &lt; 1000; i++){
-   val = a[i%2].z;
-   sum += val;
-   sum += val;
-   sum += val;
-   sum += val;
-   sum += val;	
-}
-							</code></pre>
-							<a href="http://jsperf.com/caching-of-properties">caching object properties</a>
+							<h1>Perf Tip -1</h1>
 							<br>
-							<a href="http://jsperf.com/getters-vs-getters-with-caching">getter caching</a>
-						</section> -->
+							<br>
+							<h2 class="fragment purpleBold">Cache out of scope variable</h2>
+						</section>						
 					</section>
 					<section>
 						<section>
