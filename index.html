@@ -109,16 +109,7 @@
 					</section>
 					<section>
 						<h2>TODO</h2>
-						<ol>							
-							<li>accessing global variable
-   								<ul>
-   									<li>global vs local variable</li>
-   									<li>how access global variable</li>
-   									<li>Why global is bad</li>
-   								</ul>
-							</li>						
-							<li>Event delegate</li>
-							<li>throttle and debounce (optional)</li>
+						<ol>
 							<li>find another one to talk about</li>
 							<li>js perf</li>
 						</ol>
@@ -405,23 +396,147 @@ el.addEventListener('click', function (e) { <br/>    var elm = e.target.parentNo
 							<br>
 							<h2 class="fragment purpleBold">Throttle Events</h2>
 						</section>
+					</section>
+					<section>
+						<section>
+							<h2>You might not need</h2>
+							<h1>JQuery</h1>
+						</section>
+						<section>
+							<h2>Are you ready?</h2>
+							<pre><code>
+$(document).ready(function () {
+   console.log('document is ready. I can sleep now');            
+});</code></pre>
+							<h5 class="fragment">Script as Last Tag of body</h5>							
+							<pre class="fragment"><code>
+document.addEventListener('DOMContentLoaded', function(){
+   console.log('document is ready. I can sleep now'); 
+});
+							</code></pre>
+							<pre class="fragment"><code>
+document.onreadystatechange = function () {  
+  if (document.readyState == "complete") {
+    console.log('document is ready. I can sleep now');
+  }
+}</code></pre>
+							<h4 class="fragment">Copy ready: function from JQuery</h4>
+							<a href="http://flippinawesome.org/2013/05/06/5-things-you-should-stop-doing-with-jquery/">5-things-you-should-stop-doing-with-jquery</a>
+						</section>						
+						<section>
+							<h2>deal with class</h2>
+							<pre><code>
+$(el).addClass('hide');
+
+$(el).removeClass('hide');
+
+$(el).toggleClass('hide');
+
+$(el).hasClass('hide');
+							</code></pre>
+							<pre class="fragment"><code>
+//IE9+
+el.classList.add('hide');
+el.classList.remove('hide');
+el.classList.toggle('hide'); 
+el.classList.contains('hide');
+							</code></pre>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element.classList">MDN: classList</a>
+						</section>
+						<section>
+							<h2>jQuery helpers</h2>
+							<pre><code>
+$(el).hide();
+$(el).show();
+
+el.style.display='';
+el.style.display = 'none';</code></pre>
+						<pre class="fragment"><code>
+$(el).html();
+$(el).html(setString);
+$(el).empty();
+
+
+el.innerHTML;
+el.innerHTML = setString;
+el.innerHTML = '';</code></pre>
+						<pre class="fragment"><code>
+$(el).text();
+el.textContent;</code></pre>
+							<a href="http://youmightnotneedjquery.com/">you might not need jQuery</a>
+						</section>											
+						<section>
+							<h2>event listener</h2>
+							<pre><code>
+$(el).on(eventName, eventHandler);
+
+$(el).on('click', function(e){
+	console.log(e.target);	
+})
+
+//remove event
+$(el).off(eventName, eventHandler);
+							</code></pre>
+							<pre class="fragment"><code>
+//IE9+
+el.addEventListener(eventName, eventHandler);
+
+el.addEventListener('click', function(e){
+	console.log(e.target);
+});
+
+el.removeEventListener(eventName, eventHandler);
+							</code></pre>
+						</section>
+						<section>
+							<h2>DOM manipulation</h2>
+							<pre><code>
+$(el).parent();
+$(el).children();
+
+$(el).next();
+$(el).prev();
+
+$(parent).append(el);
+$(el).remove();
+
+$(el).clone();
+							</code></pre>
+							<pre class="fragment"><code>
+el.parentNode;
+el.children;
+
+el.nextElementSibling;
+el.previousElementSibling
+
+parent.appendChild(el);
+el.parentNode.removeChild(el);
+
+el.cloneNode(true);
+							</code></pre>
+						</section>
+						<section>
+							<h2>Is JQuery is Dead?</h2>
+							<br>
+							<ol class="fragment">
+								<li>Older Browser</li>
+								<li><a href="https://docs.google.com/document/d/1LPaPA30bLUB_publLIMF0RlhdnPx_ePXm7oW02iiT6o/edit#">Browser Bugs</a></li>
+								<br>
+								<li class="fragment">use modular (sizzling)</li>
+								<li class="fragment">querySelctorAll dont have map, each, filter</li>
+								<br>
+								<li class="fragment">Angular, Backbone uses Jquery</li>
+								<li class="fragment">lazy (dont want to learn new framework)</li>
+								<li><a href="http://flippinawesome.org/2014/03/10/is-jquery-too-big-for-mobile/">is JQuery too big for mobile device</a></li>
+							</ol>
+							<br>
+							<br>
+							<h3 class="fragment">Decide based on your situation</h3>
+						</section>						
 					</section>																			
 					<section>
-							<h1>Need more !!!</h1>
-							<a href="http://www.youtube.com/watch?v=Lsg84NtJbmI">So, You Want to be a Front-End Engineer</a>
-							<a href="https://www.youtube.com/watch?v=480JL_WuMt0">Performance Tuning Secret</a>
-							<br>
-							<a href="http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X">JavaScipt Ninja</a>
-							<br/>
-							<a href="http://underscorejs.org/underscore.js">UnderScore or Angular source code </a>
-							
-							<br/>
-							<a href="http://lodash.com/">Lo-dash</a>
-							<br>
-							<a href="http://html5index.org/">JS API index</a>
-							<br>
-							<a href="https://github.com/getify/You-Dont-Know-JS">You Don't Know JS</a>
-						</section>
+						<h1>JSPerf.org</h1>							
+					</section>
 					<section>
 						<h1>Thank You</h1>
 						<br/>
@@ -434,7 +549,7 @@ el.addEventListener('click', function (e) { <br/>    var elm = e.target.parentNo
 					</section>
 					<section>
 						<h1>Question?</h1>							
-						<img src="images/question11.jpg" alt="">
+						<img src="images/question10.jpg" alt="">
 						<br>
 						<a href="http://goo.gl/0JIpFe">goo.gl/0JIpFe</a>
 						<br>
