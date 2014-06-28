@@ -295,7 +295,7 @@ function useLocal() {
 							<br>
 							<br>
 							<h2 class="fragment purpleBold">Cache out of scope variable</h2>
-						</section>						
+						</section>
 					</section>
 					<section>
 						<section>
@@ -384,161 +384,15 @@ el.addEventListener('click', function (e) { <br/>    var elm = e.target.parentNo
 							    e.preventDefault();
 							 });
 							</script>
-						</section>
-						<!-- <section>
-							<h2>event object</h2>
-							<ul>
-								<li>target</li>
-								<li>preventDefault</li>
-								<li>stropPropagation</li>
-								<li>stopImmediatePropagation</li>
-								<li>timestamp</li>
-								<li>clientX, clientY</li>
-							</ul>
-							<br>
-							<a href="http://coding.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/">intro to DOM event: The Event Object</a>
-							<br>
-							<a href="http://www.w3.org/TR/DOM-Level-3-Events/#event-types">list of dom events</a>
-						</section> -->
-						<section>
-							<h2>events attached to a dom</h2>							
-							<pre><code>
-//log all the event listener attached to el
-getEventListeners(el);
-
-//monitor every single event
-monitorEvents(el);
-
-//monitor some events
-monitorEvents(el, 'click');
-monitorEvents(el, ['click', 'focus', 'keyup']);
-
-//unmonitor
-unmonitorEvents(el);
-							</code></pre>	
-							<a href="#">create demo</a>, <a href="http://youtu.be/2zmUSoVMyRU?t=3m9s">master dev tool console</a>
 						</section>						
-						<!-- <section>
-							<h2>unbind eventhandler: memory leak</h2>
-							<p>(may go to memory leak section)</p>
-							<p>dont have time to explore, thats why hide it</p>
-						</section>												 -->
+						<section>
+							<h1>Perf Tip -2</h1>
+							<br>
+							<br>
+							<h2 class="fragment purpleBold">Delegate Events</h2>
+						</section>
 					</section>
-					<!-- <section>
-						<section>
-							<h1>Inheritance</h1>
-						</section>
-						<section>							
-							<img src="images/inheritance.png" alt="">
-							
-							<br>
-							<br>
-							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">access property chain</a>							
-						</section>
-						<section>
-							<h2>Implement Inheritance</h2>
-							<ul>
-								<li class="">Functional Pattern: <a href="http://javascript.crockford.com/inheritance.html">Crockford</a></li>
-								<li class="fragment">Constructor: <a href="http://www.klauskomenda.com/code/javascript-inheritance-by-example/"> example</a></li>
-								<li class="fragment">Prototype: <a href="http://javascriptweblog.wordpress.com/2010/06/07/understanding-javascript-prototypes/">Angus prototype</a></li>
-								<li class="fragment">Object.create: <a href="http://css.dzone.com/articles/javascript-inheritance-example">example</a></li>
-								<li class="fragment">es6: class <a href="http://wiki.ecmascript.org/doku.php?id=harmony:classes">harmony: classes</a></li>
-								<li class="fragment">Libraries: prototype.js, base.js</li>
-							</ul>							
-						</section>
-						<section>
-							<h2>functional Pattern</h2>
-							<pre><code>
-function Parent(args){
-   //create new object
-   //set properties, method
-   //retrn new object	
-}
-							</code></pre>
-							<pre class="fragment"><code>
-function Child(args){
-   //call parent, pass parameters
-   //set child properties, on the returned object from Parent
-   //return the parent
-}
-							</code></pre>
-							<li class="fragment">simple and allow encapsulation</li>	
-							<li class="fragment">Each function call creates new object</li>
-						</section>						
-						<section>
-							<h2>prototype chaining</h2>
-							<img src="images/prototype.png" alt="">
-							<br>
-							<a href="http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/">image: prototype</a>, <a href="http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/">prototype</a>,
-							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">MDN: OOP in JS</a>
-						</section>
-						<section>
-							<h2>Object.create</h2>
-							<pre><code>
-var a = {a: 1}; 
-// a ---&gt; Object.prototype ---&gt; null
-
-var b = Object.create(a);
-// b ---&gt; a ---&gt; Object.prototype ---&gt; null
-
-
-var c = Object.create(b);
-// c ---&gt; b ---&gt; a ---&gt; Object.prototype ---&gt; null
-							</code></pre>							
-							<ol>
-								<li class="fragment">object creation is faster than function</li>
-								<li class="fragment">new method in prototype is available to all</li>
-								<li class="fragment">iterate every properties in a level then go to next</li>
-								<li class="fragment">Higher lookup time for higher level properties</li>								
-								<li class="fragment">nonexistent properties traverse full chain</li>								
-								<br>
-								<li class="fragment">dont check undefined. use <code>hasOwnProperty</code></li>
-							</ol>							
-							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">MDN: perf at bottom</a>
-						</section>
-						<section>
-							<h2>best way to inheritance</h2>
-							<ol>
-								<li>It depends.</li>
-								<li class="fragment">prototypal inheritance performs better</li>
-								<li class="fragment">But dont make it crazy long</li>
-							</ol>
-							<br><br>
-							<ul class="fragment">
-								<li>Choice is yours</li>
-								<li>depending on you project, team</li>
-							</ul>
-							<br>
-							<br>
-							<br>
-							<a href="http://julien.richard-foy.fr/blog/2011/10/30/functional-inheritance-vs-prototypal-inheritance/">function vs prototypal </a>, <a href="http://jsperf.com/js-inheritance-performance/38">perf test</a>
-							<br>
-							<a href="http://erik.eae.net/archives/2009/11/09/21.12.16/">inheritance antipattern</a>
-						</section>						
-					</section> -->	
-					</section>		
 					<section>
-						<section>
-							<h1>Scroll</h1>
-							<img src="images/scroll.jpg" alt="">
-						</section>
-						<section>
-							<h2>scroll, scrollTO</h2>
-							<pre><code>
-//scroll down 100 pixels
-scroll(0, 100);
-
-scrollTo(x-coord,y-coord );
-
-//repeated scroll
-scrollBy(0, 100);
-							</code></pre>
-							<pre class="fragment"><code>
-window.onscroll = function(e) {
-   // do something on scroll 	 
-}
-							</code></pre>
-						</section>											
 						<section>
 							<h1 class="noUppercase">Debounce & Throttle</h1>
 							<h2>Defer</h2>
@@ -546,34 +400,11 @@ window.onscroll = function(e) {
 							<a href="http://jhankarmahbub.com/presentations/debounce.html">Debounce: Example</a>
 						</section>											
 						<section>
-							<h2>External effect</h2>
-							<h6>(Demo: <a href="http://jankfree.org/examples/hover.html">Something else make Scroll bad!</a>)</h6>
-							<div class="fragment">
-								<p style="text-align:left; text-decoration:underline;">Unnecessary repaint:</p>
-								<ol>
-									<li>position:fixed</li>
-									<li>overflow:scroll</li>
-									<div class="fragment">
-										<li>:hover effect</li>
-										<li>touch listeners</li>
-									</div>								
-								</ol>
-							</div>
-							<div class="fragment">
-								<p style="text-align:left; text-decoration:underline;">long paint:</p>
-								<li>visually complex css</li>
-								<li>Image resize</li>
-							</div>
-							<br>							
-							<a href="http://jankfree.org/jank-busters-cssconf/template.html#15">painful repaint</a>
+							<h1>Perf Tip -2.5</h1>
+							<br>
+							<br>
+							<h2 class="fragment purpleBold">Throttle Events</h2>
 						</section>
-<!-- 						<section>
-							<h1 class="upholdHeader">abc</h1>
-							<br/>
-							<a href="http://jankfree.org/examples/hover.html">jankFree hover</a>
-							<br/>
-							<a href="http://updates.html5rocks.com/2013/02/Profiling-Long-Paint-Times-with-DevTools-Continuous-Painting-Mode">Continuous Painting</a>
-						</section> -->
 					</section>																			
 					<section>
 							<h1>Need more !!!</h1>
