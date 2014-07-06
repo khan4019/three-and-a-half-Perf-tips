@@ -1,8 +1,7 @@
 three and a half Perf tips
 ==========================
 
-[For Chicago HTML5 meetup July 9, 2014](goo.gl/m4YgDu)
-
+[slides](https://goo.gl/m4YgDu)
 ###Tip -1
 _________________
 Cache global variables in the local scope when you are accessing them for a million times
