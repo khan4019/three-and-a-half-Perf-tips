@@ -97,8 +97,9 @@
 					<section>
 						<h1>3<sup>1</sup>&frasl;<sub>2</sub> Perf tips</h1>					
 						<br/>
-						<h2 class="fragment"><a href="http://goo.gl/m4YgDu">goo.gl/m4YgDu</a> </h2>
+						<!-- <h2 class="fragment"><a href="http://goo.gl/m4YgDu">goo.gl/m4YgDu</a> </h2> -->
 						<br/>
+						<br>
 						<p>
 							<h3>
 								<a href="http://jhankarmahbub.com">MD Khan</a> / <a href="http://twitter.com/mdkhan005">@mdkhan005</a>
@@ -107,6 +108,18 @@
 						</p>
 						<h4>www.thatjsdude.com</h4>
 					</section>					
+					<section>
+						<section>
+							<h1>why performance</h1>							
+						</section>
+						<section>
+							<img src="images/spinner.gif" alt="">
+							<!-- <div class="fragment">
+								<h6>you hate spinner,</h6>
+								<h6> so does your client</h6>
+							</div> -->
+						</section>						
+					</section>
 					<section>
 						<section>
 							<h2 class="upholdHeader">Performance improvement</h2>
@@ -124,18 +137,6 @@
 						<section>
 							<img src="images/snake.jpg" alt="">
 						</section>
-					</section>	
-					<section>
-						<section>
-							<h1>why performance</h1>							
-						</section>
-						<section>
-							<img src="images/spinner.gif" alt="">
-							<div class="fragment">
-								<h6>you hate spinner,</h6>
-								<h6> so does your client</h6>
-							</div>
-						</section>
 						<section>
 							<h2>before we start</h2>
 							<br>		
@@ -148,13 +149,13 @@
 								<li class="fragment">Then verify it in your use case</li>
 							</ul>
 						</section>
-					</section>
+					</section>	
 					<section>
 						<section>
 							<h1 class="upholdHeader">Global Variable</h1>
 							<br>
 							<ul>
-								<li class="fragment">Local scope</li>									
+								<li class="fragment">Local variable</li>									
 							</ul>
 						</section>
 						<section>
@@ -165,6 +166,9 @@
 						</section>						
 						<section>
 							<h2>global scope</h2>
+							<pre><code>
+var a = 2;
+							</code></pre>
 							<img class="fragment" src="images/globalscope.png" alt="">
 						</section>
 						<section>
@@ -177,10 +181,12 @@
 							<img  class="fullScreenImage" src="images/localStar.jpg" alt="">
 						</section>
 						<section>
-							<h2>local/function scope</h2>
+							<h2 class="upholdHeader">local/function scope</h2>
 							<pre><code>var a = 2; 
+
 function foo(){
    var b = 21;
+   return a + b;
 }</code></pre>
 							<img class="fragment" src="images/localScope.png" alt="">
 							<br>
@@ -340,7 +346,7 @@ var myArr = [1,2,3,4];
 						<section>
 							<h2>Perf Tip -2</h2>
 							<ul>
-								<li>a[index] is faster a.push</li>
+								<li><code>a[i] =5; </code> is faster <code>a.push(5);</code></li>
 								<li>push can insert multiple</li>
 								<li>consider fromIndex if possible</li>
 								<li>for loop is faster than forEach</li>
