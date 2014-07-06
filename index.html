@@ -97,8 +97,9 @@
 					<section>
 						<h1>3<sup>1</sup>&frasl;<sub>2</sub> Perf tips</h1>					
 						<br/>
-						<h2 class="fragment"><a href="http://goo.gl/m4YgDu">goo.gl/m4YgDu</a> </h2>
+						<!-- <h2 class="fragment"><a href="http://goo.gl/m4YgDu">goo.gl/m4YgDu</a> </h2> -->
 						<br/>
+						<br>
 						<p>
 							<h3>
 								<a href="http://jhankarmahbub.com">MD Khan</a> / <a href="http://twitter.com/mdkhan005">@mdkhan005</a>
@@ -107,6 +108,18 @@
 						</p>
 						<h4>www.thatjsdude.com</h4>
 					</section>					
+					<section>
+						<section>
+							<h1>why performance</h1>							
+						</section>
+						<section>
+							<img src="images/spinner.gif" alt="">
+							<!-- <div class="fragment">
+								<h6>you hate spinner,</h6>
+								<h6> so does your client</h6>
+							</div> -->
+						</section>						
+					</section>
 					<section>
 						<section>
 							<h2 class="upholdHeader">Performance improvement</h2>
@@ -123,43 +136,32 @@
 						</section>
 						<section>
 							<img src="images/snake.jpg" alt="">
-						</section>					
+						</section>
 						<section>
 							<h2>before we start</h2>
 							<br>		
 							<ul>
 								<li>best practices, jsLint, ur boss</li>
-								<li class="fragment">Don't accept, "Don't Do this"</li>
 								<li class="fragment">some random guy in meetup</li>
+								<li class="fragment">Don't accept, "Don't Do this"</li>
 								<br>			
-								
 								<li class="fragment">Ask, Why i should not do it?</li>
 								<li class="fragment">Then verify it in your use case</li>
 							</ul>
 						</section>
 						<section>
-							<img src="images/underConstruction2.gif" alt="">
-							<img class="fragment" src="images/underConstruction3.gif" alt="">
+							<img src="images/colors.jpg" alt="">
+						</section>
+						<section>
+							<img src="images/useOnlyWhatYouNeed.jpg" alt="">
 						</section>
 					</section>	
-					<section>
-						<section>
-							<h1>why performance</h1>							
-						</section>
-						<section>
-							<img src="images/spinner.gif" alt="">
-							<div class="fragment">
-								<h6>you hate spinner,</h6>
-								<h6> so does your client</h6>
-							</div>
-						</section>
-					</section>
 					<section>
 						<section>
 							<h1 class="upholdHeader">Global Variable</h1>
 							<br>
 							<ul>
-								<li class="fragment">Local scope</li>									
+								<li class="fragment">Local variable</li>									
 							</ul>
 						</section>
 						<section>
@@ -170,6 +172,9 @@
 						</section>						
 						<section>
 							<h2>global scope</h2>
+							<pre><code>
+var a = 2;
+							</code></pre>
 							<img class="fragment" src="images/globalscope.png" alt="">
 						</section>
 						<section>
@@ -182,16 +187,27 @@
 							<img  class="fullScreenImage" src="images/localStar.jpg" alt="">
 						</section>
 						<section>
-							<h2>local/function scope</h2>
-							<!-- <pre><code>var a = 2; 
-function b(){
-   var d = 21;
-   console.log(a);
+							<h2>local variable</h2>
+							<pre><code>
+function foo(){
+
+   var b = 21;
 }
-b();							</code></pre> -->
-							<img class="fragment" src="images/localScope.png" alt="">
+							</code></pre>
+							<pre class="fragment"><code>
+var a = 2; 
+
+function foo(){
+   var b = 21;
+   return a + b;
+}
+							</code></pre>
+						</section>
+						<section>
+							<h2>local/function scope</h2>
+							<img src="images/localScope.png" alt="">
 							<br>
-							<a href="http://davidshariff.com/blog/javascript-scope-chain-and-closures/">JS scope chain</a>
+							<a href="http://davidshariff.com/blog/javascript-scope-chain-and-closures/">JS scope chain</a>				
 						</section>
 						<section>
 							<h2>multi execution context</h2>
@@ -200,58 +216,8 @@ function b(){ console.log(a); }
 function c(){ console.log(a); }
 b();						
 c();</code></pre> -->
-							<img class="fragment" src="images/multiScope.png" alt="">
-						</section>
-					</section>
-					<section>
-						<section>
-							<h1 class="upholdHeader">Satuday morning</h1>
-							<img src="images/drunk.jpg" alt="" class="fragment">
-						</section>
-						<section>
-							<h2> car keys ????</h2>
-							<img src="images/lostKey.jpg" alt="">
-						</section>
-						<section>
-							<h2>step-1</h2>
-							<img src="images/messyRoom1.jpg" alt="">
-						</section>
-						<section>
-							<img src="images/underTheBed.jpg" alt="">
+							<img src="images/multiScope.png" alt="">
 						</section>						
-						<section>
-							<h2>step-2</h2>
-							<img src="images/keyHolder.jpg" alt="">
-						</section>
-						<section>
-							<h2>step -3</h2>
-							<img src="images/outsideHouse.jpg" alt="">
-						</section>
-						<section>
-							<h2>step-4</h2>
-							<img src="images/notFound.png" alt="">
-						</section>
-					</section>
-					<section>
-						<section>
-							<h1>so what?</h1>
-							<img src="images/confused.jpg" alt="">
-						</section>						
-						<section>
-							<h2>access variable</h2>
-							<pre><code>
-var c = 7;
-
-function foo(b){
-   var a = 8;
-
-   console.log(a);
-   console.log(b);
-   console.log(c);
-   console.log(d);
-}
-							</code></pre>
-						</section>
 						<section>
 							<h2>access again and again</h2>
 							<pre><code>
@@ -326,31 +292,14 @@ b.indexOf(669, 500);
 							</div>
 						</section>
 						<section>
-							<h2>forEach, map, etc.</h2>
-							<pre><code>
-var myArr = [1, 2, 3, 4];
-
-
-							</code></pre>
-							<pre class="fragment"><code>
-var myArr = [1,2,3,4];
-
-
-							</code></pre>
-							<h4 class="fragment">these becomes property of myArr</h4>
-							<a href="http://www.thatjsdude.com/jsConcepts/concepts/array.html">Array: that js dude</a>
-						</section>
-						<section>
-							<h2>Why forEach is slower</h2>
-						</section>
-						
-						<section>
-							<h2>Perf Tip -2</h2>
+							<h1>Perf Tip -2</h1>
+							<br>
+							<br>
+							<br>
 							<ul>
-								<li>a[index] is faster a.push</li>
-								<li>push can insert multiple</li>
-								<li>consider fromIndex if possible</li>
-								<li>for loop is faster than forEach</li>
+								<li><code>a[i] =5; </code> is faster <code>a.push(5);</code></li>
+								<li class="fragment">push can insert multiple</li>
+								<li class="fragment">consider fromIndex if possible</li>
 							</ul>
 						</section>						
 					</section>
@@ -360,7 +309,7 @@ var myArr = [1,2,3,4];
 							<h1>Improve</h1>
 							<h2>Performance?</h2>
 						</section>		
-						<section>?
+						<section>
 							<img src="images/redBull.jpg" alt="">
 						</section>
 						<section>
@@ -467,19 +416,15 @@ el.addEventListener('click', function (e) {
 						</section>
 					</section>					
 					<section>
-						<h1>JSPerf.org</h1>							
+						<h1>JSPerf.com</h1>							
+						<ul>
+							<li>popular test</li>
+							<li>how to create test</li>
+						</ul>
 					</section>
 					<section>
 						<section>
 							<h2 class="upholdHeader">Final Take Away</h2>
-							<ul>
-								<li class="fragment">Nothing is absolutely right</li>
-							</ul>
-							<h1 style="color:red" class="fragment">trust Tools, <span class="lineThrough">not Rules<span></h1>
-							<br/>
-							<a href="http://www.youtube.com/watch?v=MFtijdklZDo">Angus Croll: Break all the rules</a>
-						</section>
-						<section>
 							<img src="images/knowWhy.jpg" alt="">
 						</section>
 					</section>					
@@ -494,11 +439,7 @@ el.addEventListener('click', function (e) {
 						<h6>www.thatjsdude.com</h6>
 					</section>
 					<section>
-						<h1>Question?</h1>							
-						<img src="images/question10.jpg" alt="">
-						<br>
-						<a href="http://goo.gl/m4YgDu">goo.gl/m4YgDu</a>
-						<br>
+						<img src="images/question.jpg" alt="">
 						<br>
 						<a href="http://jhankarmahbub.com">MD Khan</a> / <a href="http://twitter.com/mdkhan005">@mdkhan005</a>
 						<h5>www.thatjsdude.com</h5>
