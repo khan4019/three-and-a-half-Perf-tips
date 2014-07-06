@@ -216,13 +216,7 @@ function b(){ console.log(a); }
 function c(){ console.log(a); }
 b();						
 c();</code></pre> -->
-							<img class="fragment" src="images/multiScope.png" alt="">
-						</section>
-					</section>
-					<section>
-						<section>
-							<h1>so what?</h1>
-							<img src="images/confused.jpg" alt="">
+							<img src="images/multiScope.png" alt="">
 						</section>						
 						<section>
 							<h2>access again and again</h2>
@@ -298,31 +292,11 @@ b.indexOf(669, 500);
 							</div>
 						</section>
 						<section>
-							<h2>forEach, map, etc.</h2>
-							<pre><code>
-var myArr = [1, 2, 3, 4];
-
-
-							</code></pre>
-							<pre class="fragment"><code>
-var myArr = [1,2,3,4];
-
-
-							</code></pre>
-							<h4 class="fragment">these becomes property of myArr</h4>
-							<a href="http://www.thatjsdude.com/jsConcepts/concepts/array.html">Array: that js dude</a>
-						</section>
-						<section>
-							<h2>Why forEach is slower</h2>
-						</section>
-						
-						<section>
 							<h2>Perf Tip -2</h2>
 							<ul>
 								<li><code>a[i] =5; </code> is faster <code>a.push(5);</code></li>
 								<li>push can insert multiple</li>
 								<li>consider fromIndex if possible</li>
-								<li>for loop is faster than forEach</li>
 							</ul>
 						</section>						
 					</section>
