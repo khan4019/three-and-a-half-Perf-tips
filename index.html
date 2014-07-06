@@ -187,16 +187,27 @@ var a = 2;
 							<img  class="fullScreenImage" src="images/localStar.jpg" alt="">
 						</section>
 						<section>
-							<h2 class="upholdHeader">local/function scope</h2>
-							<pre><code>var a = 2; 
+							<h2>local variable</h2>
+							<pre><code>
+function foo(){
+
+   var b = 21;
+}
+							</code></pre>
+							<pre class="fragment"><code>
+var a = 2; 
 
 function foo(){
    var b = 21;
    return a + b;
-}</code></pre>
-							<img class="fragment" src="images/localScope.png" alt="">
+}
+							</code></pre>
+						</section>
+						<section>
+							<h2>local/function scope</h2>
+							<img src="images/localScope.png" alt="">
 							<br>
-							<a href="http://davidshariff.com/blog/javascript-scope-chain-and-closures/">JS scope chain</a>
+							<a href="http://davidshariff.com/blog/javascript-scope-chain-and-closures/">JS scope chain</a>				
 						</section>
 						<section>
 							<h2>multi execution context</h2>
@@ -213,21 +224,6 @@ c();</code></pre> -->
 							<h1>so what?</h1>
 							<img src="images/confused.jpg" alt="">
 						</section>						
-						<section>
-							<h2>access variable</h2>
-							<pre><code>
-var c = 7;
-
-function foo(b){
-   var a = 8;
-
-   console.log(a);
-   console.log(b);
-   console.log(c);
-   console.log(d);
-}
-							</code></pre>
-						</section>
 						<section>
 							<h2>access again and again</h2>
 							<pre><code>
