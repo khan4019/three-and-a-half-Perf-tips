@@ -122,6 +122,62 @@
 					</section>
 					<section>
 						<section>
+							<h1>Array</h1>
+							<img src="images/array.jpg" alt="">							
+						</section>
+						<section>
+							<h2>push vs assign</h2>
+							<pre><code>
+var a = [];
+
+for (var i = 0; i&lt;10000; i++){
+   a.push(i);
+}
+							</code></pre>
+							<br>
+							<pre class="fragment"><code>
+var b = [];
+
+for (var i = 0; i&lt;10000; i++){
+   b[i] = i;
+}
+							</code></pre>
+							<a href="http://jsperf.com/zero-filled-array-creation">test: push vs assign</a>
+						</section>
+						<section>
+							<h2>Push multiple</h2>
+							<pre><code>
+var a = [1, 2];
+a.push(3, 4, 5); 
+a; // [1, 2, 3, 4, 5]
+							</code></pre>
+							<br>
+							<br>
+							<div class="fragment">
+								<h4>indexOf Extra Parameter</h4>
+								<pre><code>
+var b = [1, 2, 3, 4, 5, ...];
+
+b.indexOf(669);
+b.indexOf(669, 500);
+								</code></pre>
+								<a href="http://jsperf.com/indexof-fromindex">test: fromIndex</a>
+							</div>
+						</section>
+						<section>
+							<h1>Perf Tip -2</h1>
+							<br>
+							<br>
+							<br>
+							<ul>
+								<li><code>a[i]=5</code> is faster <code>a.push(5)</code></li>
+								<li class="fragment">push can insert multiple</li>
+								<li class="fragment">consider fromIndex if possible</li>
+							</ul>
+						</section>						
+					</section>
+					<section>
+						<section>
 							<h1 class="upholdHeader">Global Variable</h1>
 							<br>
 							<ul>
@@ -201,62 +257,6 @@ function useLocal() {
 							<br>
 							<h2 class="fragment purpleBold">Cache out of scope variable</h2>
 						</section>
-					</section>
-					<section>
-						<section>
-							<h1>Array</h1>
-							<img src="images/array.jpg" alt="">							
-						</section>
-						<section>
-							<h2>push vs assign</h2>
-							<pre><code>
-var a = [];
-
-for (var i = 0; i&lt;10000; i++){
-   a.push(i);
-}
-							</code></pre>
-							<br>
-							<pre class="fragment"><code>
-var b = [];
-
-for (var i = 0; i&lt;10000; i++){
-   b[i] = i;
-}
-							</code></pre>
-							<a href="http://jsperf.com/zero-filled-array-creation">test: push vs assign</a>
-						</section>
-						<section>
-							<h2>Push multiple</h2>
-							<pre><code>
-var a = [1, 2];
-a.push(3, 4, 5); 
-a; // [1, 2, 3, 4, 5]
-							</code></pre>
-							<br>
-							<br>
-							<div class="fragment">
-								<h4>indexOf Extra Parameter</h4>
-								<pre><code>
-var b = [1, 2, 3, 4, 5, ...];
-
-b.indexOf(669);
-b.indexOf(669, 500);
-								</code></pre>
-								<a href="http://jsperf.com/indexof-fromindex">test: fromIndex</a>
-							</div>
-						</section>
-						<section>
-							<h1>Perf Tip -2</h1>
-							<br>
-							<br>
-							<br>
-							<ul>
-								<li><code>a[i]=5</code> is faster <code>a.push(5)</code></li>
-								<li class="fragment">push can insert multiple</li>
-								<li class="fragment">consider fromIndex if possible</li>
-							</ul>
-						</section>						
 					</section>
 					<section>
 						<section>
@@ -378,6 +378,21 @@ el.addEventListener('click', function (e) {
 						</ul>
 					</section>
 					<section>
+						<section>
+							<h2>Summary</h2>
+							<ol style="list-style-type:decimal-leading-zero">
+								<li value="10">Array
+									<ul style="list-style-type:lower-latin">
+										<li><code>a[i]=5</code> is faster <code>a.push(5)</code></li>
+										<li class="fragment">push can insert multiple</li>
+										<li class="fragment">consider fromIndex if possible</li>
+									</ul>
+								</li>
+								<li value="20" class="fragment">Cache Global Variable</li>
+								<li value="30" class="fragment">Bubble up</li>
+								<li value="35" class="fragment">Throttle your events</li>
+							</ol>
+						</section>
 						<section>
 							<h2 class="upholdHeader">Final Take Away</h2>
 							<img src="images/knowWhy.jpg" alt="">
